@@ -3,6 +3,14 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
     //get the input field with .value
     const depositField = document.getElementById('deposit-field');
     const newDepositAmount = parseFloat(depositField.value);
+
+    depositField.value = '';
+
+    // check isNaN 
+    if(isNaN(newDepositAmount)){
+        alert("please enter baaper taka");
+        return;
+    }
     
     //get the deposit value
     const depositTotalElement = document.getElementById('deposit-total');
@@ -16,6 +24,6 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
     //add to total balance
     balanceTotalElement.innerText = balanceTotal + newDepositAmount;
 
-    depositField.value = '';
+    
     
 })
